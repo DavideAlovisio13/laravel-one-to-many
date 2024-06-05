@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Type extends Model
 {
     use HasFactory;
-    protected $fillable = ['data_science_projects', 'web-design_projects', 'ui-ux_projects', 'mobile_projects', 'game_projects', 'machine_learning_projects', 'other_projects'];
+    protected $fillable = ['name', 'slug'];
 
     public function projects()
     {
