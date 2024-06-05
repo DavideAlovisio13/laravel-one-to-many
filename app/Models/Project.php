@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 
 
@@ -22,6 +23,11 @@ class Project extends Model
             $count++;
         }
         return $slug;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function type()
