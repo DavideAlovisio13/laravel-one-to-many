@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 
+
 class Project extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'title', 'description', 'create_at','slug'];
+        'name', 'title', 'description', 'create_at','slug', 'type_id'];
 
     public static function generateSlug($title) {
         $slug = Str::slug($title, '-');
@@ -23,4 +24,8 @@ class Project extends Model
         return $slug;
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
